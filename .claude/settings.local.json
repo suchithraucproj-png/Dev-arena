@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./mvnw dependency:resolve -q)",
+      "Bash(./mvnw compile:*)",
+      "Bash(./mvnw clean:*)",
+      "Read(//c/Users/Suchithra R/.m2/repository/com/cloudinary/cloudinary-http45/1.38.0/**)",
+      "Bash(./mvnw spring-boot:run)",
+      "Bash(xargs cat:*)",
+      "Bash(ls d:/UC_projects/Public-Project/frontend/*.html)"
+    ]
+  }
+}
