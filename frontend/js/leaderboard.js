@@ -133,7 +133,7 @@ function renderLeaderboard(entries) {
 
 function getAvatarHtml(entry, className) {
     const picUrl = entry.profilePicUrl
-        ? (entry.profilePicUrl.startsWith('http') ? entry.profilePicUrl : 'http://localhost:8080' + entry.profilePicUrl)
+        ? (entry.profilePicUrl.startsWith('http') ? entry.profilePicUrl : window.BACKEND_BASE_URL + entry.profilePicUrl)
         : null;
     const initial = entry.displayName ? entry.displayName.charAt(0).toUpperCase() : '?';
     if (picUrl) {

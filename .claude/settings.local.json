@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git -C \"c:/Users/Suchithra R/Downloads/Dev-arena-main \\(1\\)\" log --all --oneline -20)",
+      "Bash(git -C \"c:/Users/Suchithra R/Downloads/Dev-arena-main \\(1\\)\" log --all --oneline -p -S \"Xss\")"
     ]
   }
 }

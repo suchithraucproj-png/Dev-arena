@@ -1,4 +1,5 @@
-const API_BASE = window.API_BASE_URL || 'http://localhost:8080/api';
+const API_BASE = window.API_BASE_URL;
+const BACKEND_BASE = window.BACKEND_BASE_URL;
 
 export function getToken() {
     return localStorage.getItem('jwt_token');
@@ -177,8 +178,7 @@ export async function updateNavbar() {
 
         const user = getCurrentUser();
         const initial = user?.displayName ? user.displayName.charAt(0).toUpperCase() : '?';
-        const backendBase = (window.API_BASE_URL || 'http://localhost:8080/api').replace('/api', '');
-        const picUrl = user?.profilePicUrl ? (user.profilePicUrl.startsWith('http') ? user.profilePicUrl : backendBase + user.profilePicUrl) : null;
+        const picUrl = user?.profilePicUrl ? (user.profilePicUrl.startsWith('http') ? user.profilePicUrl : BACKEND_BASE + user.profilePicUrl) : null;
         const avatarHtml = picUrl
             ? `<img src="${picUrl}" alt="" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.3);" onerror="this.outerHTML='<span style=\\'width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#198754,#0EA5E9);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700\\'>${initial}</span>'">`
             : `<span style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #198754, #0EA5E9); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">${initial}</span>`;

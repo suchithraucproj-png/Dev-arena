@@ -132,7 +132,7 @@ function renderTopSolutions(solutions) {
     // Already sorted by likes (descending) from the backend
     container.innerHTML = solutions.map((s, i) => {
         const initial = s.authorName ? s.authorName.charAt(0).toUpperCase() : '?';
-        const spPicUrl = s.authorProfilePicUrl ? (s.authorProfilePicUrl.startsWith('http') ? s.authorProfilePicUrl : 'http://localhost:8080' + s.authorProfilePicUrl) : null;
+        const spPicUrl = s.authorProfilePicUrl ? (s.authorProfilePicUrl.startsWith('http') ? s.authorProfilePicUrl : window.BACKEND_BASE_URL + s.authorProfilePicUrl) : null;
         const avatarHtml = spPicUrl
             ? `<img class="sp-avatar" src="${escapeHtml(spPicUrl)}" alt="" onerror="this.outerHTML='<span class=sp-avatar-initial>${initial}</span>'">`
             : `<span class="sp-avatar-initial">${initial}</span>`;
@@ -189,7 +189,7 @@ function renderSolutions(solutions) {
 
     container.innerHTML = solutions.map((s, i) => {
         const initial = s.authorName ? s.authorName.charAt(0).toUpperCase() : '?';
-        const sPicUrl = s.authorProfilePicUrl ? (s.authorProfilePicUrl.startsWith('http') ? s.authorProfilePicUrl : 'http://localhost:8080' + s.authorProfilePicUrl) : null;
+        const sPicUrl = s.authorProfilePicUrl ? (s.authorProfilePicUrl.startsWith('http') ? s.authorProfilePicUrl : window.BACKEND_BASE_URL + s.authorProfilePicUrl) : null;
         const avatarHtml = sPicUrl
             ? `<img src="${escapeHtml(sPicUrl)}" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='<span class=solution-avatar-initial>${initial}</span>'">`
             : `<span class="solution-avatar-initial">${initial}</span>`;
@@ -314,7 +314,7 @@ function renderComments(solutionId, comments) {
 
     list.innerHTML = comments.map(c => {
         const ci = c.authorName ? c.authorName.charAt(0).toUpperCase() : '?';
-        const picUrl = c.authorProfilePicUrl ? (c.authorProfilePicUrl.startsWith('http') ? c.authorProfilePicUrl : 'http://localhost:8080' + c.authorProfilePicUrl) : null;
+        const picUrl = c.authorProfilePicUrl ? (c.authorProfilePicUrl.startsWith('http') ? c.authorProfilePicUrl : window.BACKEND_BASE_URL + c.authorProfilePicUrl) : null;
         const commentAvatar = picUrl
             ? `<img src="${escapeHtml(picUrl)}" alt="" class="comment-avatar" onerror="this.outerHTML='<span class=comment-avatar-initial>${ci}</span>'">`
             : `<span class="comment-avatar-initial">${ci}</span>`;
